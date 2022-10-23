@@ -5,14 +5,14 @@ shared below and using a JavaScript framework/library such as Vue or React. You 
 design it the way you want and add any feature you consider necessary for the user.
 the user.
 
-### Requerimientos funcionales:
+### Functional requirements:
 
-- El usuario puede elegir entre varias categorías para ver los productos pertenecientes a tal
-  categoría.
-- Posibilidad de aplicar múltiples filtros a la vez como rango de precio, color, calificación, etc.
-- Debe poder ver más productos usando paginación.
+- The user can choose from several categories to view the products belonging to that category.
+  category.
+- Possibility to apply multiple filters at the same time such as price range, color, rating, etc.
+- Must be able to view more products using pagination.
 
-### Endpoints de la API a usar:
+### API endpoints to use:
 
 Products: http://api.devtoolstech.in/ecommerce/products
 
