@@ -1,4 +1,4 @@
-# Front-end challege
+# Front-end challenge
 
 Create a page with a list of products using the design shared below and using a JavaScript framework/library
 shared below and using a JavaScript framework/library such as Vue or React. You can
