@@ -5,6 +5,8 @@ shared below and using a JavaScript framework/library such as Vue or React. You 
 design it the way you want and add any feature you consider necessary for the user.
 the user.
 
+![image](https://user-images.githubusercontent.com/34925280/197419796-b784d9d6-385b-49bb-ae9a-00fec4950084.png)
+
 ### Requerimientos funcionales:
 
 - El usuario puede elegir entre varias categorías para ver los productos pertenecientes a tal
