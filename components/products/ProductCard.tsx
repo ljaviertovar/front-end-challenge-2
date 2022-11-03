@@ -10,8 +10,8 @@ const ProductCard: React.FC<Props> = ({ product }) => {
 		<div className='flex flex-col gap-3'>
 			<img src={product.image} alt={product.name} />
 			<h3>{product.name}</h3>
-			<p>Rating: {product.rating}</p>
-			<p>{product.price}</p>
+			<p>Rating: {"★".repeat(product.rating).padEnd(5, "☆")}</p>
+			<p>{product.price.toLocaleString("en-US", { style: "currency", currency: "USD" })}</p>
 		</div>
 	)
 }

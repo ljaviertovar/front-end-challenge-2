@@ -7,7 +7,7 @@ the user.
 
 ![image](https://user-images.githubusercontent.com/34925280/197419796-b784d9d6-385b-49bb-ae9a-00fec4950084.png)
 
-### Requerimientos funcionales:
+### Functional requirements:
 
 - The user can choose from several categories to view the products belonging to that category.
   category.

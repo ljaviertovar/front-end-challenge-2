@@ -18,11 +18,11 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 }
 
 const Home: NextPage<Props> = ({ products }) => {
-	console.log({ products })
+	// console.log({ products })
 	return (
-		<main>
+		<main className='p-7 flex gap-7'>
 			<aside>Filters</aside>
-			<section className='grid grid-cols-products gap-3 p-3'>
+			<section className='grid grid-cols-products gap-3 p-3 flex-1'>
 				{products.map(product => (
 					<article key={product.id}>
 						<ProductCard product={product} />
