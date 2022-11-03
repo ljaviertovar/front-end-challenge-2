@@ -1,4 +1,4 @@
-import { Product } from "../ts/interfaces/Product.interface"
+import { Product } from "../ts/interfaces/product.interface"
 
 const MOCK_PRODUCTS: Product[] = [
 	{
