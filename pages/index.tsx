@@ -15,6 +15,7 @@ interface Props {
 const INITIAL_FILTERS = {
 	rating: [],
 	color: [],
+	price: 0,
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -52,6 +53,14 @@ const Home: NextPage<Props> = ({ products }) => {
 		return Array.from(buffer).sort()
 	}, [products])
 
+	const prices = useMemo(() => {
+		const prices = products.map(r => r.price)
+		return {
+			max: Math.max(...prices),
+			min: Math.min(...prices),
+		}
+	}, [products])
+
 	useEffect(() => {
 		setProductsFiltered(products)
 	}, [products])
@@ -61,7 +70,17 @@ const Home: NextPage<Props> = ({ products }) => {
 
 		const ratingFilter = filters.rating.length ? filters.rating : ratings
 
-		setProductsFiltered(products.filter(p => colorFilter.includes(p.color) && ratingFilter.includes(p.rating)))
+		const priceRange = { ...prices, max: filters.price <= prices.min ? prices.max : filters.price }
+
+		setProductsFiltered(
+			products.filter(
+				p =>
+					colorFilter.includes(p.color) &&
+					ratingFilter.includes(p.rating) &&
+					p.price >= priceRange.min &&
+					p.price <= priceRange.max
+			)
+		)
 	}, [filters, products])
 
 	console.log({ productsFiltered })
@@ -70,7 +89,7 @@ const Home: NextPage<Props> = ({ products }) => {
 	return (
 		<main className='p-7 flex gap-7'>
 			<aside>
-				<PriceRangeFilter />
+				<PriceRangeFilter prices={prices} filters={filters} setFilters={setFilters} />
 
 				<ColorFilter colors={colors} filters={filters} setFilters={setFilters} />
 
