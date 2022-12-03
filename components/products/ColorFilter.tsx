@@ -1,21 +1,13 @@
-import React, { FC, useMemo, useState } from "react"
-import { Product } from "../../ts/interfaces/product.interface"
+import React, { useEffect, useMemo, useState } from "react"
+import { Filter } from "../../ts/types/product"
 
 interface Props {
-	products: Product[]
+	colors: string[]
+	filters: Filter
+	setFilters: (value: Filter) => void
 }
-const ColorFilter: React.FC<Props> = ({ products }) => {
+const ColorFilter: React.FC<Props> = ({ colors, filters, setFilters }) => {
 	const [selected, setSelected] = useState<Set<string>>(new Set())
-
-	const colors = useMemo(() => {
-		const buffer: Set<string> = new Set()
-
-		for (let product of products) {
-			buffer.add(product.color)
-		}
-
-		return Array.from(buffer)
-	}, [products])
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const isChecked = e.target.checked
@@ -28,7 +20,11 @@ const ColorFilter: React.FC<Props> = ({ products }) => {
 		setSelected(draft)
 	}
 
-	console.log({ selected })
+	useEffect(() => {
+		const colorsSelected = Array.from(selected)
+		if (!colorsSelected) setFilters({ ...filters, color: colors })
+		else setFilters({ ...filters, color: colorsSelected })
+	}, [selected])
 
 	return (
 		<div className='p-2 border-solid border-2  rounded border-black-100'>

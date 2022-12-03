@@ -11,6 +11,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
 			<img src={product.image} alt={product.name} />
 			<h3>{product.name}</h3>
 			<p>Rating: {"★".repeat(product.rating).padEnd(5, "☆")}</p>
+			<p>color: {product.color}</p>
 			<p>{product.price.toLocaleString("en-US", { style: "currency", currency: "USD" })}</p>
 		</div>
 	)

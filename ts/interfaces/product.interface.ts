@@ -9,3 +9,9 @@ export interface Product {
 	categoryId: number
 	rating: number
 }
+
+export interface Category {
+	id: number
+	name: string
+	image: string
+}
