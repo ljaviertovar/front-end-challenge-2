@@ -13,6 +13,9 @@ import useGetFiltersData from "../hooks/useGetFiltersData"
 import { Product, Category } from "../ts/interfaces/product.interface"
 import { Filter } from "../ts/types/product"
 
+import products from "../db/products-seed.json"
+import categories from "../db/categories-seed.json"
+
 const INITIAL_FILTERS = {
 	rating: [],
 	color: [],
@@ -26,10 +29,9 @@ interface Props {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const products = await fetch("http://localhost:3000/api/products").then(resp => resp.json())
+	// const products = await fetch("../  /api/products").then(resp => resp.json())
 
-	const categories = await fetch("http://localhost:3000/api/categories").then(resp => resp.json())
-	console.log(categories)
+	// const categories = await fetch("http://localhost:3000/api/categories").then(resp => resp.json())
 
 	return {
 		props: {
