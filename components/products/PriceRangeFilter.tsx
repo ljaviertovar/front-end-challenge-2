@@ -20,8 +20,8 @@ const PriceRangeFilter = ({ prices, filters, setFilters }: Props) => {
 	}, [prices])
 
 	return (
-		<div className='p-2 border-solid border-2  rounded border-black-100'>
-			<h4 className='text-xl font-bold'>Prices</h4>
+		<div className='p-2 border-solid border-2  rounded border-black-100 mb-3'>
+			<h4 className='text-xl font-bold text-white'>Prices</h4>
 			<div>
 				<span>{prices.min.toLocaleString("en-US", { style: "currency", currency: "USD" })}</span>
 				<input

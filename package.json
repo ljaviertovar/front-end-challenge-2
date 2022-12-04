@@ -7,7 +7,7 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"server": "json-server --watch db/products.json --port 5000"
+		"server": "json-server --watch db/seed.json --port 5000"
 	},
 	"dependencies": {
 		"json-server": "^0.17.1",

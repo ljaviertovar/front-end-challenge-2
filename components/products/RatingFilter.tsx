@@ -22,13 +22,13 @@ const RatingFilter = ({ ratings, filters, setFilters }: Props) => {
 		const ratingsSelected = Array.from(selected)
 		if (!ratingsSelected) setFilters({ ...filters, rating: ratings })
 		else setFilters({ ...filters, rating: ratingsSelected })
-	}, [selected])
 
-	console.log({ selected })
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [selected])
 
 	return (
 		<div className='p-2 border-solid border-2  rounded border-black-100'>
-			<h4 className='text-xl font-bold'>Colors</h4>
+			<h4 className='text-xl font-bold text-white'>Ratings</h4>
 			{ratings.map(r => (
 				<p
 					key={r}

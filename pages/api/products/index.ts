@@ -1,10 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next"
 import { Product } from "../../../ts/interfaces/product.interface"
 
-import httpHelper from "../../../helpers/httpHelper"
-const api = httpHelper()
+type Data = { message: string } | { products: Product[] } | Product[]
 
-type Data = { message: string } | { products: Product[] }
+import products from "../../../db/products-seed.json"
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
 	switch (req.method) {
@@ -12,12 +11,16 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
 			return getProducts(req, res)
 
 		default:
-			return res.status(400).json({ message: "Bad request" })
+			return res.status(500).json({ message: "Bad request" })
 	}
 }
 
-const getProducts = async (_req: NextApiRequest, res: NextApiResponse<Data>) => {
-	const products = await api.get("http://500/products")
+const getProducts = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
+	try {
+		// const products = await fetch("http://localhost:5000/products").then(resp => resp.json())
 
-	return res.status(200).json(products)
+		return res.status(200).json(products)
+	} catch (error) {
+		return res.status(500).json({ message: "Error server" })
+	}
 }
