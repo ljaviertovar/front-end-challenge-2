@@ -24,3 +24,26 @@ API uses json-server https://www.npmjs.com/package/json-server
 
 We recommend that you read
 documentation on how to apply search filters, sorting, etc.
+
+---
+## Result
+
+### Installig
+
+```
+pnpm install
+```
+
+### Running app
+
+```
+pnpm run server
+pnpm run dev
+```
+
+<hr>
+
+[🚀 See the demo here.](https://front-end-challenge-2-8kgh.vercel.app/)
+
+![image](https://user-images.githubusercontent.com/34925280/205515111-f1f42f15-2a12-4e9c-ba4d-cf69401f5aca.png)
+
