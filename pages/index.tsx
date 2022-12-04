@@ -85,8 +85,18 @@ const Home: NextPage<Props> = ({ products, categories }) => {
 				</aside>
 
 				<div className='p-2 border-solid border-2  rounded border-black-100 flex-1'>
-					<p className='px-3 text-xl font-bold text-white'>Total: {productsFiltered.length}</p>
-
+					<div className='flex gap-3 items-center'>
+						<p className='px-3 text-xl font-bold text-white'>Total: {productsFiltered.length}</p>
+						{/* <button
+							type='button'
+							className='bg-slate-500 hover:bg-slate-700 text-white font-bold py-1 px-2 rounded'
+							onClick={() => {
+								setFilters(INITIAL_FILTERS)
+							}}
+						>
+							clear filters
+						</button> */}
+					</div>
 					<section>
 						{!productsFiltered.length ? <NotFound /> : <Products products={productsFiltered} categories={categories} />}
 					</section>
