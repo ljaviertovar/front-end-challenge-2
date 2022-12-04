@@ -10,7 +10,7 @@ const ProductCard: React.FC<Props> = ({ product, category }) => {
 	return (
 		<div className='flex flex-col gap-3 bg-slate-900 rounded'>
 			<img className='rounded-t-sm' src={product.image} alt={product.name} />
-			<div className='p-7'>
+			<div className='p-5'>
 				<h3>{product.name}</h3>
 				<p>{category.name}</p>
 				<p>Rating: {"★".repeat(product.rating).padEnd(5, "☆")}</p>

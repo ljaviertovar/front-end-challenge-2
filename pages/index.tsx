@@ -71,7 +71,7 @@ const Home: NextPage<Props> = ({ products, categories }) => {
 		<main className='p-7 bg-slate-800 text-slate-400'>
 			<div className='p-2 border-solid border-2  rounded border-black-100 mb-3'>
 				<h4 className='text-xl font-bold text-white'>Categories</h4>
-				<section className='grid gap-3 grid-cols-categories items-center'>
+				<section className='grid grid-cols-products gap-3 p-3 flex-1'>
 					<Categories categories={categories} filters={filters} setFilters={setFilters} />
 				</section>
 			</div>
@@ -87,7 +87,7 @@ const Home: NextPage<Props> = ({ products, categories }) => {
 				<div className='p-2 border-solid border-2  rounded border-black-100 flex-1'>
 					<p className='px-3 text-xl font-bold text-white'>Total: {productsFiltered.length}</p>
 
-					<section className='grid grid-cols-products gap-3 p-3 flex-1'>
+					<section>
 						{!productsFiltered.length ? <NotFound /> : <Products products={productsFiltered} categories={categories} />}
 					</section>
 				</div>
